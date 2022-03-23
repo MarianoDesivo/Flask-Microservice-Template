@@ -1,11 +1,12 @@
 from flask import Flask
 from multiprocessing import Process
+import socket
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return 'hello'
+    return socket.gethostbyname(socket.gethostname())
 
 @app.route('/startheavy')
 def startHeavyProcess():
