@@ -8,9 +8,10 @@ app = Flask(__name__)
 
 
 
-@app.route("/get_my_ip", methods=["REQUEST"])
+@app.route("/get_my_ip", methods=["GET"])
 def get_my_ip():
-    return jsonify({'ip': request.remote_addr}), 200
+    name = request.args.get("name")
+    return jsonify({'ip': request.remote_addr, 'greeting': "Welcome" + name}), 200
 
 @app.route("/")
 def home():
