@@ -13,9 +13,9 @@ app = Flask(__name__)
 def get_my_ip():
     name = request.args.get("name")
     if(name):
-        return jsonify({'ip': request.remote_addr, 'greeting': "Welcome, " + name + "!!"}), 200)
+        return jsonify({'ip': request.remote_addr, 'greeting': "Welcome, " + name + "!!"}), 200
     else:
-        return jsonify({'ip': request.remote_addr}), 200)
+        return jsonify({'ip': request.remote_addr}), 200
 
 @app.route("/")
 def home():
