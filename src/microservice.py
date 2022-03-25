@@ -19,7 +19,6 @@ def get_my_ip():
 
 @app.route("/")
 def home():
-    def get_my_ip():
     name = request.args.get("name")
     if(name):
         response = make_response(jsonify({'ip': request.remote_addr, 'greeting': "Welcome, " + name + "!!"}), 200
